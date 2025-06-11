@@ -80,6 +80,13 @@ algorithm = "AES"
 # [system.parameter]
 # 'key' = "value"
 
+[[datasource]]
+id = "PostgresSQL"
+url = "jdbc:postgresql://127.0.0.1:5432/SIGAA"
+username = "SIGAA"
+password = "SIGAA"
+driver = "org.postgresql.Driver"
+
 # [[datasource]]
 # id = "WSO2CarbonDB"  # "WSO2_COORDINATION_DB"
 # url = "jdbc:mysql://localhost:3306/integratordb"

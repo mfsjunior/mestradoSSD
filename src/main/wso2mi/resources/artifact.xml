@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<artifacts>
+  <artifact name="resources_xslt_postgresql-42_2_29_jre7_jar" groupId="com.example" version="1.0.0" type="registry/resource" serverRole="EnterpriseIntegrator">
+    <item>
+      <file>postgresql-42.2.29.jre7.jar</file>
+      <path>/_system/governance/mi-resources/xslt</path>
+      <mediaType></mediaType>
+      <properties></properties>
+    </item>
+  </artifact>
+  <artifact name="resources_api-definitions_alunos_v1_0_0_yaml" groupId="com.example" version="1.0.0" type="registry/resource" serverRole="EnterpriseIntegrator">
+    <item>
+      <file>alunos_v1.0.0.yaml</file>
+      <path>/_system/governance/mi-resources/api-definitions</path>
+      <mediaType>application/yaml</mediaType>
+      <properties/>
+    </item>
+  </artifact>
+</artifacts>

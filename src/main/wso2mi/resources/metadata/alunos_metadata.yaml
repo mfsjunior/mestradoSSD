@@ -1,0 +1,10 @@
+---
+key: "alunos-1.0.0"
+name : "alunos"
+displayName : "alunos"
+description: "alunos"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/alunos"
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false

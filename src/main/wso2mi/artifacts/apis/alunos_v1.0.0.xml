@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api xmlns="http://ws.apache.org/ns/synapse" name="alunos" context="/api/Aluno" version="1.0.0" version-type="context" publishSwagger="gov:mi-resources/api-definitions/alunos.yaml">
+    <resource methods="GET">
+        <inSequence>
+            <dblookup>
+                <connection>
+                    <pool>
+                        <dsName>PostgresSQL</dsName>
+                    </pool>
+                </connection>
+                <statement>
+                    <sql>SELECT matricula, nome FROM sigaa_aluno</sql>
+                    <result name="matricula" column="matricula"/>
+                    <result name="nome" column="nome"/>
+                </statement>
+            </dblookup>
+            <payloadFactory media-type="json">
+                <format>
+                    {
+                        "alunos": [
+                            {
+                                "matricula": "$1",
+                                "nome": "$2"
+                            }
+                        ]
+                    }
+                </format>
+                <args>
+                    <arg expression="get-property('matricula')"/>
+                    <arg expression="get-property('nome')"/>
+                </args>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" url-mapping="/">
+        <inSequence><!--This is generated API skeleton.--><!--Business Logic Goes Here-->
+            <payloadFactory media-type="json">
+                <format>{"Response" : "Sample Response"}</format>
+                <args/>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/{id}">
+        <inSequence><!--This is generated API skeleton.-->
+            <property name="id" expression="get-property('uri.var.id')"/><!--Business Logic Goes Here-->
+            <payloadFactory media-type="json">
+                <format>{"Response" : "Sample Response"}</format>
+                <args/>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="PUT" uri-template="/{id}">
+        <inSequence><!--This is generated API skeleton.-->
+            <property name="id" expression="get-property('uri.var.id')"/><!--Business Logic Goes Here-->
+            <payloadFactory media-type="json">
+                <format>{"Response" : "Sample Response"}</format>
+                <args/>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="DELETE" uri-template="/{id}">
+        <inSequence><!--This is generated API skeleton.-->
+            <property name="id" expression="get-property('uri.var.id')"/><!--Business Logic Goes Here-->
+            <payloadFactory media-type="json">
+                <format>{"Response" : "Sample Response"}</format>
+                <args/>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <faultSequence/>
+    </resource>
+</api>
